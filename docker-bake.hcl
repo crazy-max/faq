@@ -39,6 +39,12 @@ target "lint" {
   output = ["type=cacheonly"]
 }
 
+target "test" {
+  inherits = ["_commons"]
+  target = "test-coverage"
+  output = ["."]
+}
+
 target "artifact" {
   inherits = ["_commons", "git-ref"]
   target = "artifacts"

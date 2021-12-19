@@ -11,7 +11,7 @@ on:
       - '*'
 
 env:
-  GHCR_SLUG: ghcr.io/jzelinskie/faq
+  GHCR_SLUG: ghcr.io/crazy-max/faq
 
 jobs:
   validate:

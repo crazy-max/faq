@@ -29,6 +29,16 @@ group "default" {
   targets = ["image-local"]
 }
 
+group "validate" {
+  targets = ["lint"]
+}
+
+target "lint" {
+  inherits = ["_commons"]
+  target = "lint"
+  output = ["type=cacheonly"]
+}
+
 target "artifact" {
   inherits = ["_commons", "git-ref"]
   target = "artifacts"

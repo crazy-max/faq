@@ -11,7 +11,7 @@ on:
       - '*'
 
 env:
-  QUAY_SLUG: quay.io/jzelinskie/faq
+  QUAY_SLUG: ghcr.io/crazy-max/faq
 
 jobs:
   validate:
@@ -110,9 +110,9 @@ jobs:
         if: github.event_name != 'pull_request'
         uses: docker/login-action@v1
         with:
-          registry: quay.io
-          username: jzelinskie+faq_gha
-          password: ${{ secrets.QUAY_ROBOT_TOKEN }}
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
       -
         name: Build artifacts
         uses: docker/bake-action@v1
